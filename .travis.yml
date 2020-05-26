@@ -9,8 +9,9 @@ script:
     - docker run ronydebnath/react-app npm run test -- --watchAll=false
     # alternatively we can run the below test command also to test our code
     # docker run -e CI=true ronydebnath/react-app npm run test
+    # - docker run ronydebnath/react-app npm run build
 
-before_deploy: "echo 'ready?'"
+# before_deploy: "echo 'ready?'"
 deploy:
     provider: elasticbeanstalk
     access_key_id: "$AWS_ACCESS_KEY"
@@ -23,4 +24,4 @@ deploy:
     on:
         branch: master
     
-after_deploy: "echo 'your brand new app version has been deployed to AWS elasticbeanstalk'"
+# after_deploy: "echo 'your brand new app version has been deployed to AWS elasticbeanstalk'"
