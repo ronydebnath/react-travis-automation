@@ -6,6 +6,7 @@ COPY package*.json .
 
 RUN npm install
 
+# this copy comand is not necessary, if volumes mounts are defined in docker-compose, but still leave it here, if the in certain time, we need to build another production image from this dockerfile
 COPY . .
 
 # Uses port which is used by the actual application

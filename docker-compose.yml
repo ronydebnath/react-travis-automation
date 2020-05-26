@@ -4,8 +4,17 @@ services:
         build:
             context: .
             dockerfile: Dockerfile.dev
-        ports: 
+        ports:
             - "3000:3000"
         volumes:
             - /app/node_modules
             - .:/app
+        tty: true
+    react-app-test:
+        build:
+            context: .
+            dockerfile: Dockerfile.dev
+        volumes: 
+            - /app/node_modules
+            - .:/app
+        command: ["npm", "run", "test"]
