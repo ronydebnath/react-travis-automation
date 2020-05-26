@@ -5,7 +5,7 @@ services:
     - docker
 before_install:
     - docker build -t ronydebnath/react-app -f Dockerfile.dev .
-scripts:
+script:
     - docker run ronydebnath/react-app npm run test npm run test -- --watchAll=false
     # alternatively we can run the below test command also to test our code
     # docker run -e CI=true ronydebnath/react-app npm run test
