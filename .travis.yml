@@ -22,5 +22,7 @@ script:
         env: "ReactTravisGithubAutomation-env"
         bucket_name: "elasticbeanstalk-us-east-1-737574240844"
         bucket_path: "react-travis-github-automation" #could use any other name instead app name 
+        on:
+            branch: master
         
     after_deploy: "echo 'your brand new app version has been deployed to AWS elasticbeanstalk'"
