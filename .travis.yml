@@ -9,3 +9,18 @@ script:
     - docker run ronydebnath/react-app npm run test -- --watchAll=false
     # alternatively we can run the below test command also to test our code
     # docker run -e CI=true ronydebnath/react-app npm run test
+
+    before_deploy: "echo 'ready?'"
+    deploy:
+        provider: elasticbeanstalk
+        access_key_id:
+            secure: "$AWS_ACCESS_KEY"
+        secret_access_key:
+            secure: "$AWS_SECRET_KEY"
+        region: "us-east-1"
+        app: "react-travis-github-automation" #app name on aws elasticbeanstalk console
+        env: "ReactTravisGithubAutomation-env"
+        bucket_name: "elasticbeanstalk-us-east-1-737574240844"
+        bucket_path: "react-travis-github-automation" #could use any other name instead app name 
+        
+    after_deploy: "echo 'your brand new app version has been deployed to AWS elasticbeanstalk'"
