@@ -18,7 +18,7 @@ deploy:
     secret_access_key: "$AWS_SECRET_KEY"
     region: "us-east-1"
     app: "react-travis-github-automation" #app name on aws elasticbeanstalk console
-    env: "ReactTravisGithubAutomation-env1"
+    env: "ReactTravisGithubAutomation-env"
     on:
         branch: master
     bucket_name: "elasticbeanstalk-us-east-1-737574240844"
