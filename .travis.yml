@@ -18,10 +18,10 @@ deploy:
     secret_access_key: "$AWS_SECRET_KEY"
     region: "us-east-1"
     app: "react-travis-github-automation" #app name on aws elasticbeanstalk console
-    env: "ReactTravisGithubAutomation-env"
-    bucket_name: "elasticbeanstalk-us-east-1-737574240844"
-    bucket_path: "react-travis-github-automation" #could use any other name instead app name 
+    env: "ReactTravisGithubAutomation-env1"
     on:
         branch: master
+    bucket_name: "elasticbeanstalk-us-east-1-737574240844"
+    bucket_path: "react-travis-github-automation" #could use any other name instead app name 
     
 # after_deploy: "echo 'your brand new app version has been deployed to AWS elasticbeanstalk'"
